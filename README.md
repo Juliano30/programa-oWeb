@@ -3,6 +3,62 @@
 ## 📋 Sobre o Projeto
 Este projeto visa desenvolver uma plataforma web completa e profissional para ONGs, permitindo o gerenciamento de atividades, divulgação de projetos, captação de recursos e engajamento de voluntários.
 
+### 👥 Personas
+1. **Administrador da ONG**
+   - Gerenciamento de informações institucionais
+   - Cadastro e edição de projetos
+   - Acompanhamento de métricas
+   - Gestão de voluntários e doações
+
+2. **Voluntário**
+   - Descoberta de oportunidades
+   - Candidatura a projetos
+   - Acompanhamento de participação
+   - Compartilhamento de experiências
+
+3. **Doador/Apoiador**
+   - Visualização de projetos e impactos
+   - Realização de doações online
+   - Acompanhamento de recursos
+   - Recebimento de relatórios
+
+4. **Visitante**
+   - Conhecimento da organização
+   - Acesso a informações de contato
+   - Visualização de galeria
+   - Compartilhamento em redes sociais
+
+### 🎯 Funcionalidades Principais
+1. **Área Institucional**
+   - Página inicial com missão, visão e valores
+   - Histórico e conquistas
+   - Equipe e estrutura
+   - Relatórios de transparência
+
+2. **Gestão de Projetos**
+   - Cadastro detalhado
+   - Galeria multimídia
+   - Indicadores de impacto
+   - Categorização
+
+3. **Engajamento de Voluntários**
+   - Portal de oportunidades
+   - Sistema de inscrição
+   - Área do voluntário
+   - Certificados digitais
+
+4. **Captação de Recursos**
+   - Campanhas de arrecadação
+   - Doações online
+   - Metas em tempo real
+   - Prestação de contas
+
+5. **Comunicação**
+   - Blog de notícias
+   - Newsletter
+   - Área de imprensa
+   - Central de documentos
+
 ### Contexto e Relevância
 - O terceiro setor brasileiro movimenta mais de R$ 15 bilhões anuais
 - Emprega aproximadamente 3 milhões de pessoas
@@ -62,11 +118,45 @@ Desenvolver uma plataforma web completa e profissional para ONGs, integrando tod
 - [ ] Testes de usabilidade
 - [ ] Documentação final
 
+## 🛠️ Requisitos Técnicos
+
+### Responsividade
+- Design mobile-first
+- Compatibilidade multiplataforma
+- Breakpoints bem definidos
+- Imagens e mídias adaptáveis
+
+### Desempenho
+- Carregamento < 5 segundos
+- Otimização de recursos
+- Lazy loading
+- Minificação de assets
+
+### Acessibilidade
+- WCAG 2.1 nível AA
+- Navegação por teclado
+- Suporte a leitores de tela
+- Contraste adequado
+
+### Segurança
+- HTTPS
+- Validação de dados
+- Proteção contra injeção
+- Autenticação segura
+
+### SEO
+- Meta tags otimizadas
+- Estrutura semântica
+- Performance otimizada
+- URLs amigáveis
+
 ## 🛠️ Tecnologias Utilizadas
-- HTML5
-- CSS3
-- JavaScript
+- HTML5 Semântico
+- CSS3 (Grid/Flexbox)
+- JavaScript Moderno
 - Git/GitHub
+- Otimização de Imagens
+- Validação W3C
 
 ## 📂 Estrutura do Projeto
 ```
