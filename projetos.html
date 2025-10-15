@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos Sociais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Projetos Sociais</h1>
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <header>
+                <h2>Voluntariado</h2>
+            </header>
+            <section>
+                <img src="imagens/voluntariado.jpg" alt="Voluntários em ação" width="400">
+                <p>Participe dos nossos projetos de voluntariado e faça a diferença na vida de muitas pessoas.</p>
+            </section>
+            <section>
+                <h2>Como Doar</h2>
+                <img src="imagens/doacao.jpg" alt="Doação" width="400">
+                <p>Você pode doar alimentos, roupas, dinheiro ou seu tempo para ajudar nossas causas.</p>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; <span id="year"></span> Minha ONG. Todos os direitos reservados.</p>
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+</body>
+</html>
