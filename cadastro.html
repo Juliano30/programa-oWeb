@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Voluntário</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function mascaraCPF(input) {
+            input.value = input.value.replace(/\D/g,"")
+                .replace(/(\d{3})(\d)/,"$1.$2")
+                .replace(/(\d{3})(\d)/,"$1.$2")
+                .replace(/(\d{3})(\d{1,2})$/,"$1-$2");
+        }
+        function mascaraTelefone(input) {
+            input.value = input.value.replace(/\D/g,"")
+                .replace(/(\d{2})(\d)/,"($1) $2")
+                .replace(/(\d{5})(\d{4})$/,"$1-$2");
+        }
+        function mascaraCEP(input) {
+            input.value = input.value.replace(/\D/g,"")
+                .replace(/(\d{5})(\d{3})$/,"$1-$2");
+        }
+        window.onload = function() {
+            document.getElementById("year").textContent = new Date().getFullYear();
+            document.getElementById("cpf").addEventListener("input", function() { mascaraCPF(this); });
+            document.getElementById("telefone").addEventListener("input", function() { mascaraTelefone(this); });
+            document.getElementById("cep").addEventListener("input", function() { mascaraCEP(this); });
+        };
+    </script>
 </head>
 <body>
     <header>
@@ -74,28 +97,6 @@
     </main>
     <footer>
         <p>&copy; <span id="year"></span> Minha ONG. Todos os direitos reservados.</p>
-        <script>document.getElementById('year').textContent = new Date().getFullYear();
-
-// Máscaras de input para CPF, telefone e CEP
-function mascaraCPF(input) {
-    input.value = input.value.replace(/\D/g,"")
-        .replace(/(\d{3})(\d)/,"$1.$2")
-        .replace(/(\d{3})(\d)/,"$1.$2")
-        .replace(/(\d{3})(\d{1,2})$/,"$1-$2");
-}
-function mascaraTelefone(input) {
-    input.value = input.value.replace(/\D/g,"")
-        .replace(/(\d{2})(\d)/,"($1) $2")
-        .replace(/(\d{5})(\d{4})$/,"$1-$2");
-}
-function mascaraCEP(input) {
-    input.value = input.value.replace(/\D/g,"")
-        .replace(/(\d{5})(\d{3})$/,"$1-$2");
-}
-document.getElementById('cpf').addEventListener('input', function() { mascaraCPF(this); });
-document.getElementById('telefone').addEventListener('input', function() { mascaraTelefone(this); });
-document.getElementById('cep').addEventListener('input', function() { mascaraCEP(this); });
-        </script>
     </footer>
 </body>
 </html>
