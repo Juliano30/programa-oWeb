@@ -1,0 +1,72 @@
+/* Reset CSS Moderno */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove estilos padrão de lista */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove estilos padrão de links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Melhora a renderização de texto */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    line-height: 1.5;
+}
+
+/* Remove bordas de inputs em dispositivos iOS */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+/* Torna imagens responsivas */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Remove estilos de botões */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Melhora a acessibilidade de foco */
+:focus {
+    outline: 3px solid var(--primary-200);
+    outline-offset: 2px;
+}
+
+/* Remove outline para mouse, mantém para teclado */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Mantém outline para navegação por teclado */
+:focus-visible {
+    outline: 3px solid var(--primary-200);
+    outline-offset: 2px;
+}

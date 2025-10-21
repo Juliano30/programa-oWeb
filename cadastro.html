@@ -43,7 +43,11 @@
     <main>
         <section>
             <h2>Formulário de Cadastro</h2>
-            <img src="assets/img/cadastro.jpg" alt="Cadastro" class="form-image">
+            <picture>
+                <source srcset="assets/img/cadastro.webp" type="image/webp">
+                <source srcset="assets/img/cadastro.jpg" type="image/jpeg">
+                <img src="assets/img/cadastro.jpg" alt="Cadastro" class="form-image">
+            </picture>
             <form id="formCadastro" action="#" method="post">
                 <fieldset>
                     <legend>Dados Pessoais</legend>

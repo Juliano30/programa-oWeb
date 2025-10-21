@@ -1,0 +1,64 @@
+:root {
+    /* Cores Primárias */
+    --primary-100: #1a4d2e;  /* Verde escuro */
+    --primary-200: #2d8047;  /* Verde médio */
+    --primary-300: #45b36b;  /* Verde claro */
+
+    /* Cores Secundárias */
+    --secondary-100: #ff6b6b;  /* Vermelho */
+    --secondary-200: #4ecdc4;  /* Turquesa */
+    --secondary-300: #ffe66d;  /* Amarelo */
+
+    /* Cores Neutras */
+    --neutral-100: #2c2c2c;  /* Cinza escuro */
+    --neutral-200: #4f4f4f;  /* Cinza médio */
+    --neutral-300: #7c7c7c;  /* Cinza claro */
+    --neutral-400: #e0e0e0;  /* Cinza mais claro */
+    --neutral-500: #f5f5f5;  /* Quase branco */
+    --neutral-600: #ffffff;  /* Branco */
+
+    /* Tipografia */
+    --font-xxxl: 2.986rem;   /* 47.78px */
+    --font-xxl: 2.488rem;    /* 39.81px */
+    --font-xl: 2.074rem;     /* 33.18px */
+    --font-lg: 1.728rem;     /* 27.65px */
+    --font-md: 1.44rem;      /* 23.04px */
+    --font-sm: 1.2rem;       /* 19.2px */
+    --font-xs: 1rem;         /* 16px base */
+
+    /* Espaçamento */
+    --space-xxs: 0.5rem;     /* 8px */
+    --space-xs: 1rem;        /* 16px */
+    --space-sm: 1.5rem;      /* 24px */
+    --space-md: 2rem;        /* 32px */
+    --space-lg: 3rem;        /* 48px */
+    --space-xl: 4rem;        /* 64px */
+
+    /* Grid */
+    --container-width: 1200px;
+    --grid-columns: 12;
+    --grid-gap: var(--space-xs);
+
+    /* Breakpoints */
+    --bp-small: 576px;
+    --bp-medium: 768px;
+    --bp-large: 992px;
+    --bp-xlarge: 1200px;
+    --bp-xxlarge: 1400px;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+}
