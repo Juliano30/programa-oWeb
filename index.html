@@ -3,92 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Usuário de ONG</title>
+    <title>ONG Amigão - Proteção Animal</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Usuários da ONG</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Quem somos</h2>
-            <p>Somos uma organização sem fins lucrativos dedicada ao resgate, reabilitação e adoção responsável de animais abandonados. Desde 2020, já ajudamos mais de 1.000 animais a encontrarem um novo lar.</p>
-            <picture>
-                <source srcset="assets/img/ong.webp" type="image/webp">
-                <source srcset="assets/img/ong.jpg" type="image/jpeg">
-                <img src="assets/img/ong.jpg" alt="Voluntários cuidando de animais resgatados" class="featured-image">
-            </picture>
-            <div class="achievements">
-                <div class="achievement-item">
-                    <strong>1000+</strong>
-                    <span>Animais Resgatados</span>
-                </div>
-                <div class="achievement-item">
-                    <strong>800+</strong>
-                    <span>Adoções Realizadas</span>
-                </div>
-                <div class="achievement-item">
-                    <strong>150+</strong>
-                    <span>Voluntários Ativos</span>
+    <div class="main-container">
+        <header class="site-header">
+            <div class="container">
+                <nav class="nav-main">
+                    <div class="nav-container">
+                        <a href="index.html" class="nav-logo">ONG Amigão</a>
+                        
+                        <button class="nav-toggle" aria-label="Menu de navegação">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+
+                        <ul class="nav-menu">
+                            <li><a href="index.html" class="nav-link">Início</a></li>
+                            <li class="nav-dropdown">
+                                <a href="projetos.html" class="nav-link">Projetos</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" class="dropdown-item">Resgate</a></li>
+                                    <li><a href="#" class="dropdown-item">Adoção</a></li>
+                                    <li><a href="#" class="dropdown-item">Castração</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="cadastro.html" class="nav-link">Cadastro</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    <main class="main-content">
+        <section class="section">
+            <div class="container">
+                <header class="section-header">
+                    <h1 class="section-title">Quem somos</h1>
+                    <p class="section-description">Somos uma organização sem fins lucrativos dedicada ao resgate, reabilitação e adoção responsável de animais abandonados.</p>
+                </header>
+
+                <div class="grid">
+                    <div class="col-md-6">
+                        <picture>
+                            <source srcset="assets/img/ong.webp" type="image/webp">
+                            <source srcset="assets/img/ong.jpg" type="image/jpeg">
+                            <img src="assets/img/ong.jpg" alt="Voluntários cuidando de animais resgatados" class="featured-image">
+                        </picture>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="achievements">
+                            <div class="achievement-item card">
+                                <div class="card-content text-center">
+                                    <strong class="text-large text-primary">1000+</strong>
+                                    <span class="text-medium">Animais Resgatados</span>
+                                </div>
+                            </div>
+                            <div class="achievement-item card">
+                                <div class="card-content text-center">
+                                    <strong class="text-large text-primary">800+</strong>
+                                    <span class="text-medium">Adoções Realizadas</span>
+                                </div>
+                            </div>
+                            <div class="achievement-item card">
+                                <div class="card-content text-center">
+                                    <strong class="text-large text-primary">150+</strong>
+                                    <span class="text-medium">Voluntários Ativos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2>Missão da ONG Amigão</h2>
-            <p>Nossa missão é promover a dignidade e o bem-estar dos animais abandonados, através de:</p>
-            <ul class="mission-list">
-                <li>Resgate e reabilitação de animais em situação de risco</li>
-                <li>Programa de adoção responsável</li>
-                <li>Campanhas de castração gratuita</li>
-                <li>Educação sobre posse responsável</li>
-                <li>Atendimento veterinário para animais carentes</li>
-            </ul>
-        </section>
+        <section class="section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Nossa Missão</h2>
+                    <p class="section-description">Promover a dignidade e o bem-estar dos animais abandonados</p>
+                </header>
 
-        <section>
-            <h2>Nossos Valores</h2>
-            <div class="values-grid">
-                <div class="value-item">
-                    <h3>Compromisso</h3>
-                    <p>Dedicação total ao bem-estar animal</p>
-                </div>
-                <div class="value-item">
-                    <h3>Responsabilidade</h3>
-                    <p>Cuidado e atenção em cada ação</p>
-                </div>
-                <div class="value-item">
-                    <h3>Transparência</h3>
-                    <p>Prestação de contas e comunicação clara</p>
-                </div>
-                <div class="value-item">
-                    <h3>Amor</h3>
-                    <p>Carinho e dedicação em cada atendimento</p>
+                <div class="grid gap-3">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3>Nossos Objetivos</h3>
+                                <ul class="mission-list">
+                                    <li><span class="badge badge-primary">1</span> Resgate e reabilitação de animais</li>
+                                    <li><span class="badge badge-primary">2</span> Programa de adoção responsável</li>
+                                    <li><span class="badge badge-primary">3</span> Campanhas de castração gratuita</li>
+                                    <li><span class="badge badge-primary">4</span> Educação sobre posse responsável</li>
+                                    <li><span class="badge badge-primary">5</span> Atendimento veterinário gratuito</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3>Como Ajudar</h3>
+                                <p>Você pode fazer a diferença na vida desses animais:</p>
+                                <div class="mt-3">
+                                    <a href="#" class="btn btn-primary mb-2">Fazer Doação</a>
+                                    <a href="cadastro.html" class="btn btn-secondary">Ser Voluntário</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2>Contato com ONG Amigão</h2>
-            <address>
-                <p>Endereço: Rua Passagens Bingo, 123 - Bairro Bela Vista - São Paulo/SP</p>
-                <p>Telefone: (11) 99999-9999</p>
-                <p>Email: contato@organizacaoonganimal.org.br</p>
-            </address>
+        <section class="section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Nossos Valores</h2>
+                    <p class="section-description">Os princípios que guiam nosso trabalho</p>
+                </header>
 
+                <div class="grid gap-3">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card hover-lift">
+                            <div class="card-content text-center">
+                                <h3>Compromisso</h3>
+                                <p>Dedicação total ao bem-estar animal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card hover-lift">
+                            <div class="card-content text-center">
+                                <h3>Responsabilidade</h3>
+                                <p>Cuidado e atenção em cada ação</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card hover-lift">
+                            <div class="card-content text-center">
+                                <h3>Transparência</h3>
+                                <p>Prestação de contas e comunicação clara</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card hover-lift">
+                            <div class="card-content text-center">
+                                <h3>Amor</h3>
+                                <p>Carinho e dedicação em cada atendimento</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Entre em Contato</h2>
+                    <p class="section-description">Estamos aqui para ajudar</p>
+                </header>
+
+                <div class="grid gap-3">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3>Nosso Endereço</h3>
+                                <address class="mt-3">
+                                    <p><strong>ONG Amigão</strong></p>
+                                    <p>Rua Passagens Bingo, 123</p>
+                                    <p>Bairro Bela Vista - São Paulo/SP</p>
+                                    <p class="mt-2">
+                                        <span class="badge">Telefone</span>
+                                        (11) 99999-9999
+                                    </p>
+                                    <p>
+                                        <span class="badge">Email</span>
+                                        contato@organizacaoonganimal.org.br
+                                    </p>
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3>Horário de Atendimento</h3>
+                                <ul class="mt-3">
+                                    <li class="mb-2">Segunda a Sexta: 9h às 18h</li>
+                                    <li class="mb-2">Sábado: 9h às 14h</li>
+                                    <li>Domingo: Fechado</li>
+                                </ul>
+                                <div class="mt-3">
+                                    <button class="btn btn-primary">Agendar Visita</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 ONG Amigão</p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="grid gap-3">
+                <div class="col-md-6">
+                    <p>&copy; 2025 ONG Amigão. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a href="#" class="btn btn-secondary">Voltar ao Topo</a>
+                </div>
+            </div>
+        </div>
     </footer>
+    
+    <script>
+        // Menu Mobile
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+
+    <!-- Modal Example -->
+    <div class="modal-overlay" id="agendarVisitaModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Agendar Visita</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="agendarVisitaForm">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="data">Data</label>
+                        <input type="date" id="data" class="form-input" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-close">Cancelar</button>
+                <button class="btn btn-primary" form="agendarVisitaForm">Agendar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</div>
 </body>
 </html>
