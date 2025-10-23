@@ -1,57 +1,4 @@
-// Inicialização do SPA
-document.addEventListener('DOMContentLoaded', () => {
-    const app = document.getElementById('app');
-
-    // Rotas da aplicação
-    const routes = {
-        '/': {
-            template: 'template-home',
-            title: 'ONG Amigão - Proteção Animal'
-        },
-        '/projetos': {
-            template: 'template-projects',
-            title: 'Projetos - ONG Amigão'
-        },
-        '/cadastro': {
-            template: 'template-register',
-            title: 'Cadastro - ONG Amigão'
-        }
-    };
-
-// Configuração das rotas SPA
-const routes = {
-    '/': async () => {
-        document.title = 'ONG Amigão - Proteção Animal';
-        return Template.render('template-home');
-    },
-    '/projetos': async () => {
-        document.title = 'Projetos - ONG Amigão';
-        return Template.render('template-projects');
-    },
-    '/cadastro': async () => {
-        document.title = 'Cadastro - ONG Amigão';
-        return Template.render('template-register');
-    },
-    '/404': async () => {
-        document.title = 'Página não encontrada - ONG Amigão';
-        return Template.render('template-404');
-    }
-};
-
-// Inicialização do Router
-const router = new Router(routes);
-
-// Menu Mobile
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.nav-menu');
-
-if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-}
-
-// Toast Notifications
+// Classes globais
 class Toast {
     constructor(message, type = 'info', duration = 3000) {
         this.message = message;
@@ -89,7 +36,6 @@ class Toast {
     }
 }
 
-// Modal com Template
 class Modal {
     constructor(id) {
         this.modal = document.getElementById(id);
@@ -122,16 +68,54 @@ class Modal {
     }
 }
 
-// Inicialização de Componentes
-document.querySelectorAll('[data-component]').forEach(element => {
-    new Component(element);
-});
-
-// Inicialização de Formulários
-document.querySelectorAll('form').forEach(form => {
-    new FormValidator(form);
-});
-
 // Exportação de classes para uso global
 window.Toast = Toast;
 window.Modal = Modal;
+
+// Inicialização do SPA
+document.addEventListener('DOMContentLoaded', () => {
+    const app = document.getElementById('app');
+
+    // Configuração das rotas SPA
+    const routes = {
+        '/': async () => {
+            document.title = 'ONG Amigão - Proteção Animal';
+            return Template.render('template-home');
+        },
+        '/projetos': async () => {
+            document.title = 'Projetos - ONG Amigão';
+            return Template.render('template-projects');
+        },
+        '/cadastro': async () => {
+            document.title = 'Cadastro - ONG Amigão';
+            return Template.render('template-register');
+        },
+        '/404': async () => {
+            document.title = 'Página não encontrada - ONG Amigão';
+            return Template.render('template-404');
+        }
+    };
+
+    // Inicialização do Router
+    const router = new Router(routes);
+
+    // Menu Mobile
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    }
+
+    // Inicialização de Componentes
+    document.querySelectorAll('[data-component]').forEach(element => {
+        new Component(element);
+    });
+
+    // Inicialização de Formulários
+    document.querySelectorAll('form').forEach(form => {
+        new FormValidator(form);
+    });
+});
