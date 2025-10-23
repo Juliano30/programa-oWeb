@@ -1,3 +1,46 @@
+// Inicialização do SPA
+document.addEventListener('DOMContentLoaded', () => {
+    const app = document.getElementById('app');
+
+    // Rotas da aplicação
+    const routes = {
+        '/': {
+            template: 'template-home',
+            title: 'ONG Amigão - Proteção Animal'
+        },
+        '/projetos': {
+            template: 'template-projects',
+            title: 'Projetos - ONG Amigão'
+        },
+        '/cadastro': {
+            template: 'template-register',
+            title: 'Cadastro - ONG Amigão'
+        }
+    };
+
+// Configuração das rotas SPA
+const routes = {
+    '/': async () => {
+        document.title = 'ONG Amigão - Proteção Animal';
+        return Template.render('template-home');
+    },
+    '/projetos': async () => {
+        document.title = 'Projetos - ONG Amigão';
+        return Template.render('template-projects');
+    },
+    '/cadastro': async () => {
+        document.title = 'Cadastro - ONG Amigão';
+        return Template.render('template-register');
+    },
+    '/404': async () => {
+        document.title = 'Página não encontrada - ONG Amigão';
+        return Template.render('template-404');
+    }
+};
+
+// Inicialização do Router
+const router = new Router(routes);
+
 // Menu Mobile
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
@@ -22,13 +65,10 @@ class Toast {
         const toast = document.createElement('div');
         toast.className = `toast toast-${this.type}`;
         
-        toast.innerHTML = `
-            <div class="toast-header">
-                <span>${this.type.charAt(0).toUpperCase() + this.type.slice(1)}</span>
-                <button class="toast-close">&times;</button>
-            </div>
-            <div class="toast-body">${this.message}</div>
-        `;
+        toast.innerHTML = Template.render('template-toast', {
+            type: this.type.charAt(0).toUpperCase() + this.type.slice(1),
+            message: this.message
+        });
 
         container.appendChild(toast);
 
@@ -49,7 +89,7 @@ class Toast {
     }
 }
 
-// Modal
+// Modal com Template
 class Modal {
     constructor(id) {
         this.modal = document.getElementById(id);
@@ -82,30 +122,16 @@ class Modal {
     }
 }
 
-// Form Validation
-const forms = document.querySelectorAll('form');
-forms.forEach(form => {
-    const inputs = form.querySelectorAll('input, select, textarea');
-    
-    inputs.forEach(input => {
-        input.addEventListener('invalid', (e) => {
-            e.preventDefault();
-            input.classList.add('error');
-        });
-
-        input.addEventListener('input', () => {
-            if (input.validity.valid) {
-                input.classList.remove('error');
-            }
-        });
-    });
-
-    form.addEventListener('submit', (e) => {
-        if (!form.checkValidity()) {
-            e.preventDefault();
-            new Toast('Por favor, preencha todos os campos corretamente.', 'error');
-        } else {
-            new Toast('Formulário enviado com sucesso!', 'success');
-        }
-    });
+// Inicialização de Componentes
+document.querySelectorAll('[data-component]').forEach(element => {
+    new Component(element);
 });
+
+// Inicialização de Formulários
+document.querySelectorAll('form').forEach(form => {
+    new FormValidator(form);
+});
+
+// Exportação de classes para uso global
+window.Toast = Toast;
+window.Modal = Modal;
