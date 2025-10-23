@@ -8,9 +8,20 @@
 </head>
 <body>
     <div class="main-container">
+        <div class="theme-switcher" role="region" aria-label="Seletor de tema">
+            <button class="theme-button" onclick="setTheme('light')" aria-label="Tema claro">
+                <span class="theme-icon">☀️</span>
+            </button>
+            <button class="theme-button" onclick="setTheme('dark')" aria-label="Tema escuro">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <button class="theme-button" onclick="setTheme('high-contrast')" aria-label="Alto contraste">
+                <span class="theme-icon">👁️</span>
+            </button>
+        </div>
         <header class="site-header">
             <div class="container">
-                <nav class="nav-main">
+                <nav class="nav-main" role="navigation" aria-label="Menu principal">
                     <div class="nav-container">
                         <a href="/" class="nav-logo" data-link>ONG Amigão</a>
                         
