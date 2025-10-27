@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
     <div class="main-container">
         <div class="theme-switcher" role="region" aria-label="Seletor de tema">
             <button class="theme-button" onclick="setTheme('light')" aria-label="Tema claro">
@@ -240,6 +241,9 @@
     </template>
 
     <!-- Scripts -->
+    <!-- Announcer for screen readers -->
+    <div class="sr-only" aria-live="polite" id="screen-reader-announcer"></div>
+
     <script>
         function navigate(page, section = null) {
             const app = document.getElementById('app');
@@ -304,21 +308,39 @@
         function validateForm(form) {
             const fields = form.querySelectorAll('input, select, textarea');
             let isValid = true;
+            let firstError = null;
 
             fields.forEach(field => {
                 if (field.hasAttribute('required') && !field.value.trim()) {
                     isValid = false;
                     showError(field, 'Este campo é obrigatório');
+                    if (!firstError) firstError = field;
+                } else if (field.pattern && !new RegExp(field.pattern).test(field.value)) {
+                    isValid = false;
+                    showError(field, field.title || 'Formato inválido');
+                    if (!firstError) firstError = field;
                 } else {
                     clearError(field);
                 }
+                
+                // Update ARIA attributes
+                field.setAttribute('aria-invalid', !isValid);
             });
 
             if (isValid) {
                 showToast('Formulário enviado com sucesso!', 'success');
                 form.reset();
+                // Announce success to screen readers
+                document.getElementById('screen-reader-announcer').textContent = 'Formulário enviado com sucesso!';
             } else {
-                showToast('Por favor, preencha todos os campos obrigatórios.', 'error');
+                showToast('Por favor, corrija os erros no formulário.', 'error');
+                // Focus first error field
+                if (firstError) {
+                    firstError.focus();
+                    // Announce error to screen readers
+                    document.getElementById('screen-reader-announcer').textContent = 
+                        `Erro no campo ${firstError.labels[0].textContent}. ${firstError.validationMessage}`;
+                }
             }
         }
 
@@ -326,9 +348,14 @@
         function showError(field, message) {
             clearError(field);
             field.classList.add('error');
+            const errorId = `error-${field.id}`;
             const errorDiv = document.createElement('div');
+            errorDiv.id = errorId;
             errorDiv.className = 'error-message';
+            errorDiv.setAttribute('role', 'alert');
             errorDiv.textContent = message;
+            field.setAttribute('aria-invalid', 'true');
+            field.setAttribute('aria-describedby', errorId);
             field.parentNode.appendChild(errorDiv);
         }
 
@@ -343,10 +370,12 @@
         function showToast(message, type = 'info') {
             const toast = document.createElement('div');
             toast.className = `toast toast-${type}`;
+            toast.setAttribute('role', 'alert');
+            toast.setAttribute('aria-live', 'assertive');
             toast.innerHTML = `
                 <div class="toast-content">
                     <span class="toast-message">${message}</span>
-                    <button class="toast-close" onclick="this.parentElement.parentElement.remove()">&times;</button>
+                    <button class="toast-close" aria-label="Fechar mensagem" onclick="this.parentElement.parentElement.remove()">&times;</button>
                 </div>
             `;
 
