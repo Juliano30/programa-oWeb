@@ -1,7 +1,7 @@
-# Plataforma Web para ONGs
+# 🌟 Plataforma Web para ONGs
 
 ## 📋 Sobre o Projeto
-Este projeto visa desenvolver uma plataforma web completa e profissional para ONGs, permitindo o gerenciamento de atividades, divulgação de projetos, captação de recursos e engajamento de voluntários.
+Este projeto implementa uma plataforma web profissional para ONGs, com foco em acessibilidade, usabilidade e boas práticas de desenvolvimento. O projeto foi desenvolvido como parte da disciplina de Programação Web, aplicando conceitos avançados de desenvolvimento front-end e práticas profissionais de mercado.
 
 ### 👥 Personas
 1. **Administrador da ONG**
@@ -79,7 +79,9 @@ Desenvolver uma plataforma web completa e profissional para ONGs, integrando tod
 
 ## 📝 Status do Projeto
 
-### ✅ Entrega 1 - Estrutura HTML5 (Atual)
+### ✅ Entregas Concluídas
+
+#### Entrega 1 - Estrutura HTML5
 - [x] Estrutura HTML5 semântica com 3 páginas
 - [x] Hierarquia de títulos lógica e consistente
 - [x] Formulário complexo com validação HTML5
@@ -87,36 +89,29 @@ Desenvolver uma plataforma web completa e profissional para ONGs, integrando tod
 - [x] Código validado pelo W3C
 - [x] Repositório público no GitHub
 
-#### Páginas Implementadas
-1. `index.html`: Página inicial sobre a organização
-2. `projetos.html`: Página de projetos sociais
-3. `cadastro.html`: Formulário de cadastro de voluntários
-
-### 🔄 Próximas Entregas
-
 #### Entrega 2 - CSS3 e Design Responsivo
-- [ ] Sistema de design consistente
-- [ ] Layouts responsivos com Grid/Flexbox
-- [ ] Media queries para diferentes dispositivos
-- [ ] Animações e transições
-- [ ] Estilização de formulários
-- [ ] Paleta de cores e tipografia
+- [x] Sistema de design consistente
+- [x] Layouts responsivos com Grid/Flexbox
+- [x] Media queries para diferentes dispositivos
+- [x] Animações e transições
+- [x] Estilização de formulários
+- [x] Paleta de cores e tipografia
 
 #### Entrega 3 - JavaScript e Interatividade
-- [ ] Dashboard dinâmico
-- [ ] Sistema de doações
-- [ ] Gerenciamento de projetos
-- [ ] Autenticação de usuários
-- [ ] Validação de formulários
-- [ ] Máscaras de input
+- [x] Sistema SPA (Single Page Application)
+- [x] Router para navegação dinâmica
+- [x] Sistema de templates
+- [x] Validação de formulários
+- [x] Máscaras de input
+- [x] Componentes interativos
 
 #### Entrega 4 - Acessibilidade e Infraestrutura
-- [ ] ARIA labels completos
-- [ ] Contraste e legibilidade
-- [ ] Navegação por teclado
-- [ ] Otimização de performance
-- [ ] Testes de usabilidade
-- [ ] Documentação final
+- [x] ARIA labels completos
+- [x] Contraste WCAG 2.1 AA
+- [x] Navegação por teclado
+- [x] Otimização de performance
+- [x] Build de produção
+- [x] Documentação técnica
 
 ## 🛠️ Requisitos Técnicos
 
@@ -161,23 +156,63 @@ Desenvolver uma plataforma web completa e profissional para ONGs, integrando tod
 ## 📂 Estrutura do Projeto
 ```
 programa-oWeb/
+├── assets/
+│   ├── css/
+│   │   ├── base/
+│   │   │   ├── animations.css
+│   │   │   ├── reset.css
+│   │   │   ├── themes.css
+│   │   │   ├── typography.css
+│   │   │   └── variables.css
+│   │   ├── components/
+│   │   │   ├── navigation.css
+│   │   │   └── ui.css
+│   │   └── layout/
+│   │       ├── grid.css
+│   │       └── layout.css
+│   ├── js/
+│   │   ├── form-validator.js
+│   │   ├── main.js
+│   │   ├── router.js
+│   │   ├── template.js
+│   │   └── theme-manager.js
+│   └── img/
+├── dist/
 ├── index.html
-├── projetos.html
-├── cadastro.html
-├── style.css
-└── imagens/
-    ├── ong.jpg
-    ├── voluntariado.jpg
-    ├── doacao.jpg
-    └── cadastro.jpg
+├── server.js
+├── webpack.config.js
+├── commitlint.config.js
+├── CHANGELOG.md
+└── package.json
 ```
 
 ## 🚀 Como Executar o Projeto
+
+### Pré-requisitos
+- Node.js (v18+)
+- npm (v9+)
+
+### Instalação
 1. Clone o repositório
 ```bash
 git clone https://github.com/Juliano30/programa-oWeb.git
+cd programa-oWeb
 ```
-2. Abra o arquivo `index.html` em um navegador web
+
+2. Instale as dependências
+```bash
+npm install
+```
+
+3. Inicie o servidor de desenvolvimento
+```bash
+npm run dev
+```
+
+4. Para build de produção
+```bash
+npm run build
+```
 
 ## 🤝 Como Contribuir
 1. Faça um fork do projeto
