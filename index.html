@@ -182,16 +182,16 @@
                         </button>
 
                         <ul class="nav-menu">
-                            <li><a href="#home" class="nav-link" onclick="navigate('home')">Início</a></li>
+                            <li><a href="#home" class="nav-link" onclick="showPage('home')">Início</a></li>
                             <li class="nav-dropdown">
-                                <a href="#projects" class="nav-link" onclick="navigate('projects')">Projetos</a>
+                                <a href="#projects" class="nav-link" onclick="showPage('projects')">Projetos</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#projects" class="dropdown-item" onclick="navigate('projects', 'resgate')">Resgate</a></li>
-                                    <li><a href="#projects" class="dropdown-item" onclick="navigate('projects', 'adocao')">Adoção</a></li>
-                                    <li><a href="#projects" class="dropdown-item" onclick="navigate('projects', 'castracao')">Castração</a></li>
+                                    <li><a href="#projects" class="dropdown-item" onclick="showPage('projects', 'resgate')">Resgate</a></li>
+                                    <li><a href="#projects" class="dropdown-item" onclick="showPage('projects', 'adocao')">Adoção</a></li>
+                                    <li><a href="#projects" class="dropdown-item" onclick="showPage('projects', 'castracao')">Castração</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#register" class="nav-link" onclick="navigate('register')">Cadastro</a></li>
+                            <li><a href="#register" class="nav-link" onclick="showPage('register')">Cadastro</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -494,7 +494,7 @@
     <div class="sr-only" aria-live="polite" id="screen-reader-announcer"></div>
 
     <script>
-        function navigate(page, section = null) {
+        function showPage(page, section = null) {
             const app = document.getElementById('app');
             let template;
 
@@ -834,7 +834,7 @@
 
         // Inicialização quando o DOM estiver carregado
         document.addEventListener('DOMContentLoaded', () => {
-            navigate('home');
+            showPage('home');
         });
     </script>
 </body>
