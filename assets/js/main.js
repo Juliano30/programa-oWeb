@@ -158,12 +158,11 @@ class App {
     }
 }
 
-// Exportar App para uso global
-window.App = App;
+// Exportar App
+export { App };
 
 // Inicialização quando o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', () => {
     const app = new App();
     App.showPage('home');
-});
 });
