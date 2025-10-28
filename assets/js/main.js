@@ -158,8 +158,14 @@ class App {
     }
 }
 
-// Exportar App
+// Exportar App e importar Router
+import { Router } from './modules/router.js';
 export { App };
+
+// Inicializar Router quando o documento estiver carregado
+document.addEventListener('DOMContentLoaded', () => {
+    new Router();
+});
 
 // Inicialização quando o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', () => {
