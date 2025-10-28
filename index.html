@@ -493,10 +493,16 @@
     <!-- Announcer for screen readers -->
     <div class="sr-only" aria-live="polite" id="screen-reader-announcer"></div>
 
-    <!-- Mobile Menu Script -->
-    <script src="assets/js/mobile-menu.js"></script>
+    <!-- Módulos JavaScript -->
+    <script type="module" src="assets/js/modules/toast.js"></script>
+    <script type="module" src="assets/js/modules/modal.js"></script>
+    <script type="module" src="assets/js/modules/validator.js"></script>
+    <script type="module" src="assets/js/modules/form-validator.js"></script>
+    <script type="module" src="assets/js/modules/event-bus.js"></script>
+    <script type="module" src="assets/js/mobile-menu.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
 
-    <script>
+    <script
         function showPage(page, section = null) {
             const app = document.getElementById('app');
             let template;
