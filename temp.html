@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONG Amigão - Proteção Animal</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header class="site-header">
+            <div class="container">
+                <nav class="nav-main" role="navigation" aria-label="Menu principal">
+                    <div class="nav-container">
+                        <a href="#" onclick="showPage('home')" class="nav-logo">ONG Amigão</a>
+                        
+                        <ul class="nav-menu">
+                            <li><a href="#" onclick="showPage('home')" class="nav-link">Início</a></li>
+                            <li class="nav-dropdown">
+                                <a href="#" onclick="showPage('projects')" class="nav-link">Projetos</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" onclick="showPage('projects', 'resgate')" class="dropdown-item">Resgate</a></li>
+                                    <li><a href="#" onclick="showPage('projects', 'adocao')" class="dropdown-item">Adoção</a></li>
+                                    <li><a href="#" onclick="showPage('projects', 'castracao')" class="dropdown-item">Castração</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" onclick="showPage('register')" class="nav-link">Cadastro</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <!-- O conteúdo será carregado aqui -->
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>&copy; 2025 ONG Amigão. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Templates -->
+    <div id="templates" style="display: none;">
+        <!-- Template Home -->
+        <div id="home-content">
+            <section class="section">
+                <div class="container">
+                    <h1 class="section-title">Quem somos</h1>
+                    <p class="section-description">Somos uma organização sem fins lucrativos dedicada ao resgate, reabilitação e adoção responsável de animais abandonados.</p>
+                    
+                    <div class="grid">
+                        <div class="col-md-6">
+                            <img src="assets/img/ong.jpg" alt="Voluntários cuidando de animais" class="featured-image">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="achievements">
+                                <div class="achievement-item">
+                                    <strong>1000+</strong>
+                                    <span>Animais Resgatados</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <strong>800+</strong>
+                                    <span>Adoções Realizadas</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <strong>150+</strong>
+                                    <span>Voluntários Ativos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Template Projetos -->
+        <div id="projects-content">
+            <section class="section">
+                <div class="container">
+                    <h1 class="section-title">Nossos Projetos</h1>
+                    <div class="grid">
+                        <div class="col-md-4">
+                            <div class="card" id="resgate">
+                                <h3>Resgate</h3>
+                                <p>Resgatamos animais em situação de risco e providenciamos os cuidados necessários.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card" id="adocao">
+                                <h3>Adoção</h3>
+                                <p>Realize o sonho de ter um novo amigo e dê um lar para um animal resgatado.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card" id="castracao">
+                                <h3>Castração</h3>
+                                <p>Programa de castração gratuita para animais de famílias de baixa renda.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Template Cadastro -->
+        <div id="register-content">
+            <section class="section">
+                <div class="container">
+                    <h1 class="section-title">Cadastro de Voluntário</h1>
+                    <div class="card">
+                        <form id="register-form" class="form">
+                            <div class="form-group">
+                                <label for="name">Nome Completo:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefone:</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="area">Área de Interesse:</label>
+                                <select id="area" name="area" required>
+                                    <option value="">Selecione uma área</option>
+                                    <option value="resgate">Resgate</option>
+                                    <option value="adocao">Adoção</option>
+                                    <option value="castracao">Castração</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Cadastro</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+    // Função principal para mostrar páginas
+    function showPage(page, section = null) {
+        if (event) event.preventDefault();
+        
+        // Atualizar conteúdo
+        const content = document.getElementById(page + '-content');
+        const mainContent = document.getElementById('main-content');
+        
+        if (content) {
+            mainContent.innerHTML = content.innerHTML;
+            
+            // Atualizar título
+            document.title = getTitleForPage(page);
+            
+            // Se estiver na página de projetos e tiver uma seção específica
+            if (page === 'projects' && section) {
+                setTimeout(() => {
+                    const element = document.getElementById(section);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            }
+            
+            // Se estiver na página de cadastro, inicializar o formulário
+            if (page === 'register') {
+                initializeForm();
+            }
+        }
+    }
+
+    // Função para obter o título da página
+    function getTitleForPage(page) {
+        const titles = {
+            'home': 'ONG Amigão - Proteção Animal',
+            'projects': 'Projetos - ONG Amigão',
+            'register': 'Cadastro - ONG Amigão'
+        };
+        return titles[page] || 'ONG Amigão';
+    }
+
+    // Função para inicializar o formulário
+    function initializeForm() {
+        const form = document.getElementById('register-form');
+        if (form) {
+            form.onsubmit = function(e) {
+                e.preventDefault();
+                alert('Cadastro enviado com sucesso!');
+                form.reset();
+            };
+        }
+    }
+
+    // Carregar a página inicial quando o documento estiver pronto
+    document.addEventListener('DOMContentLoaded', () => {
+        showPage('home');
+    });
+    </script>
+</body>
+</html>
