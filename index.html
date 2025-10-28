@@ -157,9 +157,15 @@
 </head>
 <body>
     <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
-    <div class="main-container">
-        <div class="theme-switcher" role="region" aria-label="Seletor de tema">
-            <button class="theme-button" onclick="setTheme('light')" aria-label="Tema claro">
+    <div class="skip-links">
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    <a href="#nav-main" class="skip-link">Pular para navegação principal</a>
+    <a href="#footer" class="skip-link">Pular para o rodapé</a>
+</div>
+
+<div class="main-container">
+        <div class="theme-switcher" role="complementary" aria-label="Seletor de tema">
+            <button class="theme-button" data-theme="light" aria-label="Tema claro">
                 <span class="theme-icon">☀️</span>
             </button>
             <button class="theme-button" onclick="setTheme('dark')" aria-label="Tema escuro">
