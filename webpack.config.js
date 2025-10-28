@@ -1,7 +1,9 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const ImageMinimizerPlugin = require('imagemin-webpack-plugin').default;
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -22,10 +24,38 @@ module.exports = {
         ],
     },
     plugins: [
+        new CopyWebpackPlugin({
+            patterns: [
+                { 
+                    from: 'assets/img', 
+                    to: 'assets/img' 
+                }
+            ]
+        }),
         new ImageMinimizerPlugin({
-            minimizerOptions: {
-                plugins: ['gifsicle', 'jpegtran', 'optipng', 'svgo']
+            minimizer: {
+                implementation: ImageMinimizerPlugin.imageminMinify,
+                options: {
+                    plugins: [
+                        ['mozjpeg', { quality: 75 }],
+                        ['pngquant', { quality: [0.65, 0.9], speed: 4 }],
+                        ['gifsicle', { interlaced: true }],
+                        ['svgo', {}]
+                    ]
+                }
             }
+        }),
+        new ImageminWebpWebpackPlugin({
+            config: [{
+                test: /\.(jpe?g|png)/,
+                options: {
+                    quality: 75
+                }
+            }],
+            overrideExtension: true,
+            detailedLogs: true,
+            silent: false,
+            strict: true
         })
     ],
     module: {

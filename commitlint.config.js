@@ -11,7 +11,15 @@ module.exports = {
             'test',    // Testes
             'chore',   // Tarefas de build, etc
             'ci',      // Configuração de CI
-            'revert'   // Reverter commits
-        ]]
+            'revert',  // Reverter commits
+            'a11y',    // Melhorias de acessibilidade
+            'build'    // Alterações no sistema de build
+        ]],
+        'type-case': [2, 'always', 'lower-case'],
+        'type-empty': [2, 'never'],
+        'subject-empty': [2, 'never'],
+        'subject-full-stop': [2, 'never', '.'],
+        'subject-case': [2, 'always', ['lower-case']],
+        'body-leading-blank': [2, 'always']
     }
 };
